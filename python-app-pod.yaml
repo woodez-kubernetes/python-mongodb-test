@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-deployment
+  labels:
+    app: python-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+      - name: python-app-container
+        # Replace with your actual image path
+        image: your-registry/python-mongo-app:latest
+        ports:
+        - containerPort: 5000 # If it were a web app, e.g., Flask/Django
+        # Environment variables are already set to default/hardcoded values in app.py, 
+        # but this is where you'd inject credentials from a Secret
+        # env:
+        # - name: MONGO_HOST
+        #   value: "mongodb-service"
