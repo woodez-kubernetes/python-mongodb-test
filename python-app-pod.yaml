@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: python-app-deployment
+  namespace: woodez-database
   labels:
     app: python-app
 spec:
@@ -17,7 +18,7 @@ spec:
       containers:
       - name: python-app-container
         # Replace with your actual image path
-        image: kwood475/python-mongo-app:latest
+        image: kwood475/python-mongodb-test:latest
         ports:
         - containerPort: 5000 # If it were a web app, e.g., Flask/Django
         # Environment variables are already set to default/hardcoded values in app.py, 
