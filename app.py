@@ -6,7 +6,7 @@ from pymongo.errors import ConnectionFailure, OperationFailure
 # The hostname for a MongoDB running in the same K8s cluster should be
 # the name of the Kubernetes Service for MongoDB.
 # The port is the default MongoDB port, 27017.
-MONGO_HOST = os.environ.get('MONGO_HOST', 'mongodb-service')
+MONGO_HOST = os.environ.get('MONGO_HOST', 'mongodb-headless')
 MONGO_PORT = int(os.environ.get('MONGO_PORT', 27017))
 MONGO_URI = f"mongodb://{MONGO_HOST}:{MONGO_PORT}/"
 DATABASE_NAME = "testdb"
