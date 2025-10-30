@@ -17,7 +17,7 @@ spec:
       containers:
       - name: python-app-container
         # Replace with your actual image path
-        image: your-registry/python-mongo-app:latest
+        image: kwood475/python-mongo-app:latest
         ports:
         - containerPort: 5000 # If it were a web app, e.g., Flask/Django
         # Environment variables are already set to default/hardcoded values in app.py, 
